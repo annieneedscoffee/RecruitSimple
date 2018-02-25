@@ -15,5 +15,22 @@ module.exports = {
   });
 },
 
+  getemp: function(req, res){
+    knex('workers').then((result)=>{
+      res.render('legalgatheremployers', {workers: result})
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
+  getwork: function(req, res){
+    knex('workers').then((result)=>{
+      res.render('legalgathercandidates', {workers: result})
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  }
 
 };

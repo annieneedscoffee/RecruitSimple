@@ -4,5 +4,9 @@ nav{
 
 footer{
   opacity: .5;
+}
 
+.mylogo{
+  font-family: cursive;
+  font-size: 70px;
 }
