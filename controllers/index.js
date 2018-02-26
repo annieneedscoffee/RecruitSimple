@@ -31,6 +31,15 @@ module.exports = {
     .catch((err)=>{
       console.error(err)
     });
+  },
+
+  admin: function(req, res){
+    knex('workers').then((result)=>{
+      res.render('legalgatheradmin', {workers: result})
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
   }
 
 };
