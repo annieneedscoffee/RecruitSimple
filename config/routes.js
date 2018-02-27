@@ -8,4 +8,5 @@ module.exports = function(app){
   app.get('/legalgatheremployers', index.getemp);
   app.get('/legalgathercandidates', index.getwork);
   app.get('/legalgatheradmin', index.admin);
+  app.post('/addworker', index.postcand);
 }

@@ -11,7 +11,7 @@
       <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-    <title>Legal Gather - Candidates</title>
+    <title>Legal Gather - Admin</title>
 
 <link rel="stylesheet" href="/stylesheets/main.css">
   </head>
@@ -60,13 +60,15 @@
  </thead>
 
  <tbody>
+   <% for(i=0;i<workers.length;i++){ %>
    <tr>
-     <td>data</td>
-     <td>link</td>
-     <td>link</td>
-     <td>link</td>
+     <td><%= workers[i].name %></td>
+     <td><a href="">Details & Matches</a></td>
+     <td><a href="">Edit</a></td>
+     <td><a href="">Delete</a></td>
 
    </tr>
+   <% } %>
  </tbody>
 </table>
              </br>
