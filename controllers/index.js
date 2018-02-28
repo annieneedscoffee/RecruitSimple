@@ -107,6 +107,34 @@ log: function(req, res) {
     });
   },
 
+  matchjob: function(req, res){
+    knex('jobs')
+    .where('id', req.params.id)
+    .then((jobresult)=>{
+      knex('workers')
+      .then((workresult)=>{
+        res.render('matchjob', {jobs: jobresult[0], workers: workresult})
+      })
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
+  matchcand: function(req, res){
+    knex('workers')
+    .where('id', req.params.id)
+    .then((workresult)=>{
+      knex('jobs')
+      .then((jobresult)=>{
+        res.render('matchcand', {workers: workresult[0], jobs: jobresult})
+      })
+    })
+    .catch((err)=>{
+      console.error(err)
+    });
+  },
+
   delcand: function(req, res){
     knex('workers')
     .where('id', req.params.id)

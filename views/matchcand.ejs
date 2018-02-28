@@ -49,28 +49,69 @@
                  <div class="col s6">
                    <div class="card">
                      <div class="card-content">
-                       <span class="card-title">Candidate Profiles</span>
+                       <span class="card-title">Candidate Profile</span>
                        <table class="striped">
  <thead>
    <tr>
        <th>Name</th>
-       <th>Details & Matches</th>
-       <th>Edit</th>
-       <th>Delete</th>
+       <th>Location</th>
+       <th>Relocate</th>
+       <th>Experience</th>
    </tr>
  </thead>
 
  <tbody>
-   <% for(i=0;i<workers.length;i++){ %>
+
    <tr>
-     <td><%= workers[i].name %></td>
-     <td><a href="/legalgather/admin/matchcand/<%=workers[i].id%>">Details & Matches</a></td>
-     <td><a href="/legalgather/admin/editcand/<%=workers[i].id%>">Edit</a></td>
-     <td><a href="/legalgather/admin/warn/worker/<%=workers[i].id%>">Delete</a></td>
+     <td><%= workers.name %></td>
+     <td><%= workers.location %></td>
+     <td><%= workers.relocate %></td>
+     <td><%= workers.experience %></td>
 
    </tr>
-   <% } %>
  </tbody>
+</table>
+<table class="striped">
+<thead>
+<tr>
+<th>Years Out School</th>
+<th>Current Job</th>
+<th>Level</th>
+<th>Practice</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><%= workers.yearsout %></td>
+<td><%= workers.current %></td>
+<td><%= workers.level %></td>
+<td><%= workers.practice %></td>
+
+</tr>
+</tbody>
+</table>
+<table class="striped">
+<thead>
+<tr>
+<th>Employer</th>
+<th>Past Jobs</th>
+<th>Interests/Accomplishments</th>
+<th>Certifications</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><%= workers.employer %></td>
+<td><%= workers.past %></td>
+<td><%= workers.other %></td>
+<td><%= workers.certifications %></td>
+
+</tr>
+</tbody>
 </table>
              </br>
                    </br>
@@ -81,14 +122,14 @@
            <div class="col s6">
              <div class="card">
                <div class="card-content">
-                 <span class="card-title">Jobs</span>
+                 <span class="card-title">Matching Jobs</span>
            <table class="striped">
 <thead>
 <tr>
 <th>Title</th>
+<th>Location</th>
+<th>Company</th>
 <th>Details & Matches</th>
-<th>Edit</th>
-<th>Delete</th>
 </tr>
 </thead>
 
@@ -96,10 +137,9 @@
   <% for(i=0;i<jobs.length;i++){ %>
   <tr>
     <td><%= jobs[i].jobtitle %></td>
+      <td><%= jobs[i].location %></td>
+        <td><%= jobs[i].company %></td>
     <td><a href="/legalgather/admin/matchjob/<%=jobs[i].id%>">Details & Matches</a></td>
-    <td><a href="/legalgather/admin/editjob/<%=jobs[i].id%>">Edit</a></td>
-    <td><a href="/legalgather/admin/warn/job/<%=jobs[i].id%>">Delete</a></td>
-
   </tr>
   <% } %>
 </tbody>

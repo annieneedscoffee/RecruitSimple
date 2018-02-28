@@ -19,4 +19,6 @@ module.exports = function(app){
   app.get('/legalgather/admin/warn/job/:id', index.warnjob);
   app.get('/legalgather/admin/warn/worker/:id', index.warncand);
   app.get('/legalgather/login', index.log);
+  app.get('/legalgather/admin/matchjob/:id', index.matchjob);
+  app.get('/legalgather/admin/matchcand/:id', index.matchcand);
 }
