@@ -11,7 +11,7 @@
       <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-    <title>Legal Gather - Employers</title>
+    <title>Legal Gather - Edit Job</title>
 
 <link rel="stylesheet" href="/stylesheets/main.css">
   </head>
@@ -47,82 +47,82 @@
              <div class="card">
                <div class="card-content">
                  <span class="card-title">Job Description</span>
-                   <form action="/addjob" method="post">
+                   <form action="/legalgather/admin/editjob/<%=jobs.id%>" method="post">
 
                  </br>
-                 <p><strong>Location: </strong></p>
+                 <p><strong>Location: <%=jobs.location%></strong></p>
                  <div class="input-field col s12">
-                 <input name="location" placeholder="Location" id="location" type="text" class="validate">
+                 <input name="location" value="<%=jobs.location%>" id="location" type="text" class="validate">
                  </div>
                </br>
-                 <p><strong>Willing to Accept Remote Workers (enter true or false): </strong></p>
+                 <p><strong>Willing to Accept Remote Workers (enter true or false): <%=jobs.remote%> </strong></p>
                  <div class="input-field col s12">
-                 <input name="remote" placeholder="Remote" id="remote" type="text" class="validate">
+                 <input name="remote" value="<%=jobs.remote%>" id="remote" type="text" class="validate">
                  </div>
                    </br>
-                 <p><strong>Experience: </strong> in years</p>
+                 <p><strong>Experience: <%=jobs.experience%></strong> in years</p>
                  <div class="input-field col s12">
-                 <input name="experience" placeholder="Experience" id="experience" type="text" class="validate">
+                 <input name="experience" value="<%=jobs.experience%>" id="experience" type="text" class="validate">
                  </div>
                    </br>
-                   <p><strong>Previous Title Required: </strong></p>
+                   <p><strong>Previous Title Required: <%=jobs.previous%> </strong></p>
                    <div class="input-field col s12">
-                   <input name="previous" placeholder="Previous Title Required" id="previous" type="text" class="validate">
+                   <input name="previous" value="<%=jobs.previous%>" id="previous" type="text" class="validate">
                    </div>
                      </br>
-                     <p><strong>Practice Specialty: </strong></p>
+                     <p><strong>Practice Specialty: <%=jobs.practice%> </strong></p>
                      <div class="input-field col s12">
-                     <input name="practice" placeholder="Practice" id="practice" type="text" class="validate">
+                     <input name="practice" value="<%=jobs.practice%>" id="practice" type="text" class="validate">
                      </div>
                        </br>
-                       <p><strong>Interests & Accomplishments Desired: </strong></p>
+                       <p><strong>Interests & Accomplishments Desired: <%=jobs.other%> </strong></p>
                        <div class="input-field col s12">
-                       <input name="other" placeholder="Other" id="other" type="text" class="validate">
+                       <input name="other" value="<%=jobs.other%>" id="other" type="text" class="validate">
                        </div>
                          </br>
-                 <p><strong>Certifications: </strong></p>
+                 <p><strong>Certifications: <%=jobs.certifications%></strong></p>
                  <div class="input-field col s12">
-                 <input name="certifications" placeholder="Certifications" id="certifications" type="text" class="validate">
+                 <input name="certifications" value="<%=jobs.certifications%>" id="certifications" type="text" class="validate">
                  </div>
                    </br>
-                 <p><strong>Licensing: </strong></p>
+                 <p><strong>Licensing: <%=jobs.license%></strong></p>
                  <div class="input-field col s12">
-                 <input name="license" placeholder="License" id="license" type="text" class="validate">
+                 <input name="license" value="<%=jobs.certifications%>" id="license" type="text" class="validate">
                  </div>
                    </br>
-                 <p><strong>Degrees: </strong></p>
+                 <p><strong>Degrees: <%=jobs.degree%></strong></p>
                  <div class="input-field col s12">
-                 <input name="degrees" placeholder="Degrees" id="degrees" type="text" class="validate">
+                 <input name="degree" value="<%=jobs.degree%>" id="degree" type="text" class="validate">
                  </div>
                    </br>
-                 <p><strong>Skills: </strong></p>
+                 <p><strong>Skills: <%=jobs.skills%></strong></p>
                  <div class="input-field col s12">
-                 <input name="skills" placeholder="Skills" id="skills" type="text" class="validate">
+                 <input name="skills" value="<%=jobs.skills%>" id="skills" type="text" class="validate">
                  </div>
                </br>
-               <p><strong>Job Title: </strong></p>
+               <p><strong>Job Title: <%=jobs.jobtitle%></strong></p>
                <div class="input-field col s12">
-               <input name="jobtitle" placeholder="Jobtitle" id="jobtitle" type="text" class="validate">
+               <input name="jobtitle" value="<%=jobs.jobtitle%>" id="jobtitle" type="text" class="validate">
                </div>
              </br>
-           <p><strong>Phone: </strong></p>
+           <p><strong>Phone: <%=jobs.phone%></strong></p>
            <div class="input-field col s12">
-           <input name="phone" placeholder="Phone" id="phone" type="text" class="validate">
+           <input name="phone" value="<%=jobs.phone%>" id="phone" type="text" class="validate">
            </div>
          </br>
-         <p><strong>Email: </strong></p>
+         <p><strong>Email: <%=jobs.email%></strong></p>
          <div class="input-field col s12">
-         <input name="email" placeholder="Email" id="email" type="text" class="validate">
+         <input name="email" value="<%=jobs.email%>" id="email" type="text" class="validate">
          </div>
        </br>
-       <p><strong>Company: </strong></p>
+       <p><strong>Company: <%=jobs.company%></strong></p>
        <div class="input-field col s12">
-       <input name="company" placeholder="Compay" id="company" type="text" class="validate">
+       <input name="company" value="<%=jobs.company%>" id="company" type="text" class="validate">
        </div>
      </br>
-     <p><strong>Contact Person: </strong></p>
+     <p><strong>Contact Person: <%=jobs.contactperson%></strong></p>
      <div class="input-field col s12">
-     <input name="contactperson" placeholder="Contact Person" id="contactperson" type="text" class="validate">
+     <input name="contactperson" value="<%=jobs.contactperson%>" id="contactperson" type="text" class="validate">
      </div>
          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
  <i class="material-icons right">send</i>

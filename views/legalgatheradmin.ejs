@@ -21,8 +21,9 @@
         <div class="nav-wrapper">
           <a href="/legalgather" class="mylogo"> Legal-Gather</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/legalgathercandidates">Job Seekers</a></li>
-            <li><a href="/legalgatheremployers">Talent Seekers</a></li>
+            <li><a href="/legalgather/candidates">Job Seekers</a></li>
+            <li><a href="/legalgather/employers">Talent Seekers</a></li>
+            <li><a href="">Log Out</a></li>
           </ul>
         </div>
         <div class="nav-content">
@@ -64,8 +65,8 @@
    <tr>
      <td><%= workers[i].name %></td>
      <td><a href="">Details & Matches</a></td>
-     <td><a href="">Edit</a></td>
-     <td><a href="">Delete</a></td>
+     <td><a href="/legalgather/admin/editcand/<%=workers[i].id%>">Edit</a></td>
+     <td><a href="/legalgather/admin/warn/worker/<%=workers[i].id%>">Delete</a></td>
 
    </tr>
    <% } %>
@@ -92,13 +93,15 @@
 </thead>
 
 <tbody>
-<tr>
-<td>data</td>
-<td>link</td>
-<td>link</td>
-<td>link</td>
+  <% for(i=0;i<jobs.length;i++){ %>
+  <tr>
+    <td><%= jobs[i].jobtitle %></td>
+    <td><a href="">Details & Matches</a></td>
+    <td><a href="/legalgather/admin/editjob/<%=jobs[i].id%>">Edit</a></td>
+    <td><a href="/legalgather/admin/warn/job/<%=jobs[i].id%>">Delete</a></td>
 
-</tr>
+  </tr>
+  <% } %>
 </tbody>
 </table>
 </br>
