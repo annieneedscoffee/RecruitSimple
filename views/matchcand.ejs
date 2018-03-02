@@ -43,7 +43,7 @@
        </br>
      </br>
    </br>
-         <div id="workform">
+         <div id="matchcand">
 
                <div class="row">
                  <div class="col s6">
@@ -113,6 +113,44 @@
 </tr>
 </tbody>
 </table>
+<table class="striped">
+<thead>
+<tr>
+<th>License</th>
+<th>Degrees</th>
+<th>Skills</th>
+<th>Phone</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><%= workers.license %></td>
+<td><%= workers.degree %></td>
+<td><%= workers.skills %></td>
+<td><%= workers.phone %></td>
+
+</tr>
+</tbody>
+</table>
+<table class="striped">
+<thead>
+<tr>
+<th>Email</th>
+
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><%= workers.email %></td>
+
+
+</tr>
+</tbody>
+</table>
              </br>
                    </br>
 
@@ -135,6 +173,7 @@
 
 <tbody>
   <% for(i=0;i<jobs.length;i++){ %>
+
   <tr>
     <td><%= jobs[i].jobtitle %></td>
       <td><%= jobs[i].location %></td>
@@ -142,6 +181,7 @@
     <td><a href="/legalgather/admin/matchjob/<%=jobs[i].id%>">Details & Matches</a></td>
   </tr>
   <% } %>
+
 </tbody>
 </table>
 </br>

@@ -2,9 +2,204 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Match Job</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <title>Legal Gather - Admin</title>
+
+<link rel="stylesheet" href="/stylesheets/main.css">
   </head>
   <body>
-    <h1>Match Job</h1>
-  </body>
+<div class="large card">
+      <nav class="nav-extended black" id="header">
+        <div class="nav-wrapper">
+          <a href="/legalgather" class="mylogo"> Legal-Gather</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/legalgather/candidates">Job Seekers</a></li>
+            <li><a href="/legalgather/employers">Talent Seekers</a></li>
+            <li><a href="">Log Out</a></li>
+          </ul>
+        </div>
+        <div class="nav-content">
+          <ul class="tabs tabs-transparent">
+  <li class="tab"><a href="#test1"></a></li>
+  <li class="tab"><a class="active" href="#test2"></a></li>
+  <li class="tab disabled"><a href="#test3"></a></li>
+  <li class="tab"><a href="#test4"></a></li>
+</ul>
+        </div>
+      </nav>
+
+
+         <div class="card-image">
+           <img src="/images/anders-jilden-3871.jpg" />
+         </div>
+       </br>
+     </br>
+   </br>
+         <div id="matchjob">
+
+               <div class="row">
+                 <div class="col s6">
+                   <div class="card">
+                     <div class="card-content">
+                       <span class="card-title">Job Description</span>
+                       <table class="striped">
+ <thead>
+   <tr>
+       <th>Title</th>
+       <th>Location</th>
+       <th>Remote</th>
+       <th>Experience</th>
+   </tr>
+ </thead>
+
+ <tbody>
+
+   <tr>
+     <td><%= jobs.jobtitle %></td>
+     <td><%= jobs.location %></td>
+     <td><%= jobs.remote %></td>
+     <td><%= jobs.experience %></td>
+
+   </tr>
+ </tbody>
+</table>
+<table class="striped">
+<thead>
+<tr>
+<th>Prev Title</th>
+<th>Practice</th>
+<th>Interests/Accomp</th>
+<th>Certifications</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><%= jobs.previous %></td>
+<td><%= jobs.practice %></td>
+<td><%= jobs.other %></td>
+<td><%= jobs.certifications %></td>
+
+</tr>
+</tbody>
+</table>
+<table class="striped">
+<thead>
+<tr>
+<th>License</th>
+<th>Degrees</th>
+<th>Skills</th>
+<th>Phone</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><%= jobs.license %></td>
+<td><%= jobs.degree %></td>
+<td><%= jobs.skills %></td>
+<td><%= jobs.phone %></td>
+
+</tr>
+</tbody>
+</table>
+<table class="striped">
+<thead>
+<tr>
+<th>Email</th>
+<th>Company</th>
+<th>Contact</th>
+
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><%= jobs.email %></td>
+<td><%= jobs.company %></td>
+<td><%= jobs.contactperson %></td>
+
+
+</tr>
+</tbody>
+</table>
+</br>
+      </br>
+
+</div>
+</div>
+</div>
+<div class="col s6">
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">Matching Candidates</span>
+<table class="striped">
+<thead>
+<tr>
+<th>Level</th>
+<th>Practice Specialty</th>
+<th>Current</th>
+<th>Years Experience</th>
+<th>Details & Matches</th>
+</tr>
+</thead>
+
+<tbody>
+<% for(i=0;i<workers.length;i++){ %>
+<tr>
+<td><%= workers[i].level %></td>
+<td><%= workers[i].practice %></td>
+<td><%= workers[i].current %></td>
+<td><%= workers[i].experience %></td>
+<td><a href="/legalgather/admin/matchcand/<%=workers[i].id%>">Details & Matches</a></td>
+</tr>
+<% } %>
+</tbody>
+</table>
+</br>
+</br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+
+</body>
 </html>
