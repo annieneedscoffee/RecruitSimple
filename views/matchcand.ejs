@@ -66,7 +66,7 @@
      <td><%= workers.name %></td>
      <td><%= workers.location %></td>
      <td><%= workers.relocate %></td>
-     <td><%= workers.experience %></td>
+     <td><%= parseInt(workers.experience) %></td>
 
    </tr>
  </tbody>
@@ -164,6 +164,7 @@
            <table class="striped">
 <thead>
 <tr>
+  <th>Match</th>
 <th>Title</th>
 <th>Location</th>
 <th>Company</th>
@@ -173,15 +174,20 @@
 
 <tbody>
   <% for(i=0;i<jobs.length;i++){ %>
-
+    <% if(parseInt(workers.experience) < parseInt(jobs[i].experience)){ %>
   <tr>
-    <td><%= jobs[i].jobtitle %></td>
-      <td><%= jobs[i].location %></td>
-        <td><%= jobs[i].company %></td>
-    <td><a href="/legalgather/admin/matchjob/<%=jobs[i].id%>">Details & Matches</a></td>
+<td>No</td>
   </tr>
+<% }else{ %>
+  <tr>
+<td>Yes</td>
+<td><%= jobs[i].jobtitle %></td>
+  <td><%= jobs[i].location %></td>
+    <td><%= jobs[i].company %></td>
+<td><a href="/legalgather/admin/matchjob/<%=jobs[i].id%>">Details & Matches</a></td>
+</tr>
   <% } %>
-
+  <% } %>
 </tbody>
 </table>
 </br>
