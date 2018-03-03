@@ -147,6 +147,7 @@
 <table class="striped">
 <thead>
 <tr>
+  <td>Match</td>
 <th>Level</th>
 <th>Practice Specialty</th>
 <th>Current</th>
@@ -157,13 +158,20 @@
 
 <tbody>
 <% for(i=0;i<workers.length;i++){ %>
+  <% if(parseInt(workers[i].experience) < parseInt(jobs.experience)){ %>
 <tr>
+<td>No</td>
+</tr>
+<% }else{ %>
+<tr>
+  <td>Yes</td>
 <td><%= workers[i].level %></td>
 <td><%= workers[i].practice %></td>
 <td><%= workers[i].current %></td>
 <td><%= workers[i].experience %></td>
 <td><a href="/legalgather/admin/matchcand/<%=workers[i].id%>">Details & Matches</a></td>
 </tr>
+<% } %>
 <% } %>
 </tbody>
 </table>

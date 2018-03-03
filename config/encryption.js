@@ -21,7 +21,7 @@ module.exports = {
 
   },
 
-  check: function(encryptedUser, admins){
+  check: function(encryptedAdmin, admins){
     return new Promise((resolve, reject)=>{
       bcrypt.compare(admins.password, encryptedAdmin.password, function(err, isMatch) {
           if (err) reject(err);
