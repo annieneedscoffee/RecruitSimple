@@ -17,11 +17,28 @@ module.exports = {
 
 log: function(req, res) {
   knex('admins').then((result)=>{
-  res.render('login', {admins: result})
+  res.render('login', {admins: result});
+
 })
 .catch((err)=>{
   console.error(err)
 });
+},
+
+login: function(req, res){
+  knex('admins')
+    .where('email', req.body.email)
+    .then((result)=>{
+      let admins = result[0];
+
+     if(admins.password === req.body.password){
+        req.session.admins = admins.id;
+        res.redirect('/legalgather/admin/:id')
+      }else{
+        req.session.message = "Incorrect username or password."
+        res.redirect('/legalgather/login')
+      }
+    })
 },
 
   getemp: function(req, res){
