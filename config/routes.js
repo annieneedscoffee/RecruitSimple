@@ -21,7 +21,7 @@ module.exports = function(app){
   app.get('/legalgather/login', index.log);
   app.post('/legalgather/login', index.login);
 
-  /*app.use(adminAuth);*/
+  app.use(adminAuth);
     app.get('/legalgather/admin/:id', index.admin);
     app.get('/legalgather/admin/matchjob/:id', index.matchjob);
     app.get('/legalgather/admin/matchcand/:id', index.matchcand);
